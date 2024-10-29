@@ -1,0 +1,120 @@
+--Load
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/hakaiofc/Base/main/HUBORION')))()
+
+--Main Script
+local Window = OrionLib:MakeWindow({Name = "Hakai's Hub, HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroEnabled = false})
+  
+--ANTI AFK 
+pcall(function()
+    local VirtualUser=game:service'VirtualUser'
+    game:service'Players'.LocalPlayer.Idled:connect(function()
+    warn("anti-afk")
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+       end)
+    end) 
+
+--GLOBALS 
+LP = game.Players.LocalPlayer
+VIM = game:GetService("VirtualInputManager")
+
+--Valor
+_G.AutoGolpe = True
+--Função
+function AutoGolpe()
+while _G.AutoGolpe == true do
+local A_1 = "Left Punch"
+local Event = game:GetService("ReplicatedStorage").Remotes.Attack
+Event:FireServer(A_1)
+local A_2 = "Right Punch"
+local Event = game:GetService("ReplicatedStorage").Remotes.Attack
+Event:FireServer(A_2)
+game:GetService("Players").LocalPlayer.Character.Katana.Combo.C2:FireServer()
+wait()
+end
+end
+--Valor
+_G.AutoDP = True
+--Função
+function AutoDP()
+while _G.AutoDP == true do
+game:GetService("Players").LocalPlayer.Character.Dumbell.Event:FireServer()
+local args = {
+  [1] = "GiveHealthCuzPro",
+  [2] = 2,
+  [3] = 1
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Lutero"):FireServer(unpack(args))
+wait()
+end
+end
+--Valor
+_G.AutoStamina = True
+--Função
+function AutoStamina()
+while _G.AutoStamina == true do
+game:GetService("ReplicatedStorage").AddStaminaEvent:FireServer()
+wait()
+end
+end
+--HubExclusivo
+local HubExclusivoTab = Window:MakeTab({
+    Name = "MenuExclusivo",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Section = HubExclusivoTab:AddSection({
+    Name = "Auto-Farme"
+})
+HubExclusivoTab:AddToggle({
+    Name = "Farm No Saco",
+    Default = false,
+    Callback = function(Value)
+        _G.AutoGolpe = Value
+        AutoGolpe()
+    end
+})
+HubExclusivoTab:AddToggle({
+    Name = "Auto Dumbbell,Pushup",
+    Default = false,
+    Callback = function(Value)
+        _G.AutoDP = Value
+        AutoDP()
+    end
+})
+HubExclusivoTab:AddToggle({
+    Name = "Auto Stamina",
+    Default = false,
+    Callback = function(Value)
+        _G.AutoStamina = Value
+        AutoStamina()
+    end
+})
+--Infinite-Yield
+local InfiniteYieldTab = Window:MakeTab({
+    Name = "Infinite-Yield-E-Giro",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Section = InfiniteYieldTab:AddSection({
+    Name = "Infinite-Yield-E-Giro"
+})
+InfiniteYieldTab:AddButton({
+    Name = "InfiniteYield",
+    Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/hakaiofc/EdgeIYinfiniteyield/main/mastersource'))()
+    end
+})
+InfiniteYieldTab:AddButton({
+    Name = "Giro-Farme ⚙️",
+    Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/hakaiofc/CobraLegend/main/Spin'))()
+wait()
+end
+})
+    Callback = function(Value)
+        _G.AutoVD = Value
+        AutoVD(0.0000000000000000000001)
+    end
+})
