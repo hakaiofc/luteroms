@@ -23,12 +23,6 @@ _G.AutoGolpe = True
 --Função
 function AutoGolpe()
 while _G.AutoGolpe == true do
-local A_1 = "Left Punch"
-local Event = game:GetService("ReplicatedStorage").Remotes.Attack
-Event:FireServer(A_1)
-local A_2 = "Right Punch"
-local Event = game:GetService("ReplicatedStorage").Remotes.Attack
-Event:FireServer(A_2)
 game:GetService("Players").LocalPlayer.Character.Katana.Combo.C2:FireServer()
 wait()
 end
@@ -38,13 +32,12 @@ _G.AutoDP = True
 --Função
 function AutoDP()
 while _G.AutoDP == true do
-game:GetService("Players").LocalPlayer.Character.Dumbell.Event:FireServer()
 local args = {
   [1] = "GiveHealthCuzPro",
   [2] = 2,
   [3] = 1
 }
-
+game:GetService("Players").LocalPlayer.Character.Dumbell.Event:FireServer()
 game:GetService("ReplicatedStorage"):WaitForChild("Lutero"):FireServer(unpack(args))
 wait()
 end
@@ -54,6 +47,8 @@ _G.AutoStamina = True
 --Função
 function AutoStamina()
 while _G.AutoStamina == true do
+game:GetService("ReplicatedStorage").AddStaminaEvent:FireServer()
+game:GetService("ReplicatedStorage").AddStaminaEvent:FireServer()
 game:GetService("ReplicatedStorage").AddStaminaEvent:FireServer()
 wait()
 end
