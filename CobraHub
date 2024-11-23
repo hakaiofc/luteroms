@@ -32,7 +32,6 @@ _G.AutoDP = True
 --Função
 function AutoDP()
 while _G.AutoDP == true do
-game:GetService("Players").LocalPlayer.Character.Dumbell.Event:FireServer()
 local args = {
   [1] = "GiveHealthCuzPro",
   [2] = 2,
@@ -43,13 +42,22 @@ wait()
 end
 end
 --Valor
+_G.AutoDumbell = True
+--Função
+function AutoDumbell()
+while _G.AutoDumbell == true do
+game:GetService("Players").LocalPlayer.Character.Dumbell.Event:FireServer()
+game:GetService("Players").LocalPlayer.Character.Dumbell.Event:FireServer()
+game:GetService("Players").LocalPlayer.Character.Dumbell.Event:FireServer()
+wait()
+end
+end
+--Valor
 _G.AutoStamina = True
 --Função
 function AutoStamina()
 while _G.AutoStamina == true do
-game:GetService("ReplicatedStorage").AddStaminaEvent:FireServer()
-game:GetService("ReplicatedStorage").AddStaminaEvent:FireServer()
-game:GetService("ReplicatedStorage").AddStaminaEvent:FireServer()
+game:GetService("Players").LocalPlayer.Character.Dumbell.Event:FireServer()
 wait()
 end
 end
@@ -84,6 +92,14 @@ HubExclusivoTab:AddToggle({
     Callback = function(Value)
         _G.AutoStamina = Value
         AutoStamina()
+    end
+})
+HubExclusivoTab:AddToggle({
+    Name = "Auto Dumbell",
+    Default = false,
+    Callback = function(Value)
+        _G.AutoDumbell = Value
+        AutoDumbell()
     end
 })
 --Infinite-Yield
