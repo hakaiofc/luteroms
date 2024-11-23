@@ -32,12 +32,12 @@ _G.AutoDP = True
 --Função
 function AutoDP()
 while _G.AutoDP == true do
+game:GetService("Players").LocalPlayer.Character.Dumbell.Event:FireServer()
 local args = {
   [1] = "GiveHealthCuzPro",
   [2] = 2,
   [3] = 1
 }
-game:GetService("Players").LocalPlayer.Character.Dumbell.Event:FireServer()
 game:GetService("ReplicatedStorage"):WaitForChild("Lutero"):FireServer(unpack(args))
 wait()
 end
