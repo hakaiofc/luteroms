@@ -32,12 +32,7 @@ _G.AutoDP = True
 --Função
 function AutoDP()
 while _G.AutoDP == true do
-local args = {
-  [1] = "GiveHealthCuzPro",
-  [2] = 2,
-  [3] = 1
-}
-game:GetService("ReplicatedStorage"):WaitForChild("Lutero"):FireServer(unpack(args))
+game:GetService("ReplicatedStorage"):WaitForChild("Lutero"):FireServer()
 wait()
 end
 end
