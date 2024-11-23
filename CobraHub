@@ -57,7 +57,9 @@ _G.AutoStamina = True
 --Função
 function AutoStamina()
 while _G.AutoStamina == true do
-game:GetService("Players").LocalPlayer.Character.Dumbell.Event:FireServer()
+game:GetService("ReplicatedStorage").AddStaminaEvent:FireServer()
+game:GetService("ReplicatedStorage").AddStaminaEvent:FireServer()
+game:GetService("ReplicatedStorage").AddStaminaEvent:FireServer()
 wait()
 end
 end
