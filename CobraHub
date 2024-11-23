@@ -108,8 +108,3 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/hakaiofc/CobraLegend/
 wait()
 end
 })
-    Callback = function(Value)
-        _G.AutoVD = Value
-        AutoVD(0.0000000000000000000001)
-    end
-})
